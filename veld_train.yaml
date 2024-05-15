@@ -1,0 +1,9 @@
+x-veld:
+  executable:
+
+services:
+  veld:
+    build: .
+    volumes:
+      - ./:/veld/executable/
+
