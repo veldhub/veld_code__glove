@@ -2,8 +2,9 @@ x-veld:
   executable:
 
 services:
-  veld:
+  veld_train:
     build: .
     volumes:
-      - ./:/veld/executable/
+      - ./src/main/:/veld/executable/
+    command: /veld/executable/demo.sh
 

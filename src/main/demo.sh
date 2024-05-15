@@ -2,11 +2,11 @@
 set -e
 
 #CORPUS=/veld/executable/text8
-VOCAB_FILE=vocab.txt
-COOCCURRENCE_FILE=cooccurrence.bin
-COOCCURRENCE_SHUF_FILE=cooccurrence.shuf.bin
+#VOCAB_FILE=vocab.txt
+#COOCCURRENCE_FILE=cooccurrence.bin
+#COOCCURRENCE_SHUF_FILE=cooccurrence.shuf.bin
+#SAVE_FILE=vectors
 BUILDDIR=/opt/glove/build
-SAVE_FILE=vectors
 VERBOSE=2
 MEMORY=4.0
 VOCAB_MIN_COUNT=5
