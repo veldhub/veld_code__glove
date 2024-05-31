@@ -10,8 +10,5 @@ RUN pip3 install numpy==1.26.4
 COPY ./src/glove/ /opt/glove/
 WORKDIR /opt/glove/
 RUN make
-RUN useradd -u 1000 docker_user
 RUN mkdir -p /veld/executable/
-RUN chown docker_user:docker_user -R /veld/executable/
-USER docker_user
 WORKDIR /veld/executable/
