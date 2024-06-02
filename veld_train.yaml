@@ -6,5 +6,20 @@ services:
     build: .
     volumes:
       - ./src/main/:/veld/executable/
-    command: /veld/executable/demo.sh
+    command: /veld/executable/train.sh
+    environment:
+      CORPUS: ""
+      VOCAB_FILE: ""
+      COOCCURRENCE_FILE: ""
+      COOCCURRENCE_SHUF_FILE: ""
+      SAVE_FILE: ""
+      VERBOSE: 2
+      MEMORY: 4.0
+      VOCAB_MIN_COUNT: 5
+      VECTOR_SIZE: 50
+      MAX_ITER: 15
+      WINDOW_SIZE: 15
+      BINARY: 2
+      NUM_THREADS: 8
+      X_MAX: 10
 
