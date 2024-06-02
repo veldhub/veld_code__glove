@@ -1,3 +1,11 @@
+## GloVe Repo, integrated via git subtree
+
+This folder contains the contents of: https://github.com/stanfordnlp/GloVe and was integrated into
+this veld repo as a git subtree at commit: b1ee48a471a7a6a681c19f6c6d14f86e5b0d9615
+
+Other than some minor modifications on the code, the contents of this folder is identical to the
+original GloVe repo.
+
 ## GloVe: Global Vectors for Word Representation
 
 
