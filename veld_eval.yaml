@@ -1,0 +1,14 @@
+x-veld:
+  executable:
+
+services:
+  veld_eval:
+    build: .
+    volumes:
+      - ./src/:/veld/executable/
+    command: python3 /opt/glove/eval/python/evaluate.py
+    environment:
+      VOCAB_FILE: ""
+      VECTOR_FILE: ""
+      EVAL_FOLDER: ""
+

@@ -1,15 +1,24 @@
+import os
 import argparse
 import numpy as np
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--vocab_file', default='vocab.txt', type=str)
-    parser.add_argument('--vectors_file', default='vectors.txt', type=str)
-    args = parser.parse_args()
 
-    with open(args.vocab_file, 'r') as f:
+VOCAB_FILE = os.getenv("VOCAB_FILE")
+VECTOR_FILE = os.getenv("VECTOR_FILE") 
+EVAL_FOLDER  = os.getenv("EVAL_FOLDER")
+
+
+def main():
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('--vocab_file', default='vocab.txt', type=str)
+    # parser.add_argument('--vectors_file', default='vectors.txt', type=str)
+    # args = parser.parse_args()
+    # 
+    # with open(args.vocab_file, 'r') as f:
+    with open(VOCAB_FILE, 'r') as f:
         words = [x.rstrip().split(' ')[0] for x in f.readlines()]
-    with open(args.vectors_file, 'r') as f:
+    # with open(args.vectors_file, 'r') as f:
+    with ope(VECTOR_FILE, 'r') as f:
         vectors = {}
         for line in f:
             vals = line.rstrip().split(' ')
@@ -42,7 +51,8 @@ def evaluate_vectors(W, vocab):
         'gram5-present-participle.txt', 'gram6-nationality-adjective.txt',
         'gram7-past-tense.txt', 'gram8-plural.txt', 'gram9-plural-verbs.txt',
         ]
-    prefix = './eval/question-data/'
+    # prefix = './eval/question-data/'
+    prefix = EVAL_FOLDER
 
     # to avoid memory overflow, could be increased/decreased
     # depending on system and vocab size
