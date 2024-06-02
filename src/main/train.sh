@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# this script is slimmed down and adapted version of the original demo.sh script in the GloVe repo
+
 set -e
 
 echo
