@@ -18,7 +18,7 @@ def main():
     with open(VOCAB_FILE, 'r') as f:
         words = [x.rstrip().split(' ')[0] for x in f.readlines()]
     # with open(args.vectors_file, 'r') as f:
-    with ope(VECTOR_FILE, 'r') as f:
+    with open(VECTOR_FILE, 'r') as f:
         vectors = {}
         for line in f:
             vals = line.rstrip().split(' ')
