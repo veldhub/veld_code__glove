@@ -1,5 +1,5 @@
 x-veld:
-  executable:
+  code:
 
 services:
   veld_eval:

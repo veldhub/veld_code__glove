@@ -1,12 +1,12 @@
 x-veld:
-  executable:
+  code:
 
 services:
   veld_train:
     build: .
     volumes:
-      - ./src/main/:/veld/executable/
-    command: /veld/executable/train.sh
+      - ./src/main/:/veld/code/
+    command: /veld/code/train.sh
     environment:
       CORPUS: ""
       VOCAB_FILE: ""
