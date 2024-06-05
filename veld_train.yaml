@@ -1,5 +1,9 @@
 x-veld:
   code:
+    # TODO
+    about:
+      description:
+      topics:
 
 services:
   veld_train:
@@ -8,11 +12,11 @@ services:
       - ./src/main/:/veld/code/
     command: /veld/code/train.sh
     environment:
-      CORPUS: ""
-      VOCAB_FILE: ""
-      COOCCURRENCE_FILE: ""
-      COOCCURRENCE_SHUF_FILE: ""
-      SAVE_FILE: ""
+      CORPUS: null
+      VOCAB_FILE: null
+      COOCCURRENCE_FILE: null
+      COOCCURRENCE_SHUF_FILE: null
+      SAVE_FILE: null
       VERBOSE: 2
       MEMORY: 4.0
       VOCAB_MIN_COUNT: 5
