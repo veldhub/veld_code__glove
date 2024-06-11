@@ -5,6 +5,11 @@ x-veld:
       description:
       topics:
 
+    environment:
+      VOCAB_FILE:
+        optional: true
+      VECTOR_FILE:
+
 services:
   veld_infer:
     build: .
@@ -12,9 +17,8 @@ services:
     ports:
       - 8888:8888
     volumes:
-      - ./src/main/:/veld/code/
+      - ./src/main/infer/:/veld/code/
     environment:
       VOCAB_FILE: null
       VECTOR_FILE: null
-      EVAL_FOLDER: null
 
