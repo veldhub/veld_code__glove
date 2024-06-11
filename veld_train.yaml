@@ -9,7 +9,7 @@ services:
   veld_train:
     build: .
     volumes:
-      - ./src/main/:/veld/code/
+      - ./src/main/train/:/veld/code/
     command: /veld/code/train.sh
     environment:
       CORPUS: null
