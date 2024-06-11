@@ -1,0 +1,20 @@
+x-veld:
+  code:
+    # TODO
+    about:
+      description:
+      topics:
+
+services:
+  veld_infer:
+    build: .
+    command: jupyter notebook --allow-root --ip='*' --NotebookApp.token='' --NotebookApp.password=''
+    ports:
+      - 8888:8888
+    volumes:
+      - ./src/main/:/veld/code/
+    environment:
+      VOCAB_FILE: null
+      VECTOR_FILE: null
+      EVAL_FOLDER: null
+

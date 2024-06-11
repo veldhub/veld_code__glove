@@ -1,3 +1,4 @@
+# TODO: rearrange installs for docker build optimization
 FROM debian:bullseye-20240513-slim
 RUN apt update
 RUN apt install -y \
@@ -10,6 +11,6 @@ RUN pip3 install numpy==1.26.4
 COPY ./src/glove/ /opt/glove/
 WORKDIR /opt/glove/
 RUN make
-RUN mkdir -p /veld/executable/
-WORKDIR /veld/executable/
-
+RUN mkdir -p /veld/code/
+WORKDIR /veld/code/
+RUN pip3 install notebook==7.2.1
