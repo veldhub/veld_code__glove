@@ -17,5 +17,3 @@ echo "$ /opt/glove/build/shuffle -memory $MEMORY -verbose $VERBOSE < $COOCCURREN
 echo "$ /opt/glove/build/glove -save-file $VECTOR_FILE -threads $NUM_THREADS -input-file $COOCCURRENCE_SHUF_FILE -x-max $X_MAX -iter $MAX_ITER -vector-size $VECTOR_SIZE -binary $BINARY -vocab-file $VOCAB_FILE -verbose $VERBOSE"
 /opt/glove/build/glove -save-file $VECTOR_FILE -threads $NUM_THREADS -input-file $COOCCURRENCE_SHUF_FILE -x-max $X_MAX -iter $MAX_ITER -vector-size $VECTOR_SIZE -binary $BINARY -vocab-file $VOCAB_FILE -verbose $VERBOSE
 
-echo "$ python3 eval/python/evaluate.py"
-python3 /opt/glove/eval/python/evaluate.py
