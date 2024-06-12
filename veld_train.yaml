@@ -26,7 +26,7 @@ x-veld:
     environment:
 
       # input and output files
-      in_corpus:
+      in_corpus_file:
         type: file
         volume: /veld/input/
       out_vocab_file:
