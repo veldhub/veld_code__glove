@@ -1,14 +1,26 @@
 x-veld:
   code:
-    # TODO
     about:
-      description:
+      description: "A jupyter notebook that loads GloVe vectors and provides some convenient
+        functions to use them."
       topics:
+        - "NLP"
+        - "Machine learning"
+        - "word embeddings"
+
+    inputs:
+      volume: /veld/input/
+      file_formats: "txt"
+      description: "GloVe vectors expressed in a txt, where each line starts with the word, and its
+        vector values are whitespace separated."
+      contents: 
+        - "word embeddings"
+        - "glove vectors"
 
     environment:
-      VOCAB_FILE:
-        optional: true
-      VECTOR_FILE:
+      in_vector_file:
+        type: file
+        volume: /veld/input/
 
 services:
   veld_infer:
@@ -19,6 +31,5 @@ services:
     volumes:
       - ./src/main/infer/:/veld/code/
     environment:
-      VOCAB_FILE: null
-      VECTOR_FILE: null
+      in_vector_file: null
 

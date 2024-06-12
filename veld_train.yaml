@@ -1,9 +1,75 @@
 x-veld:
   code:
-    # TODO
     about:
-      description:
+      description: "This code repo encapsulates the original code from
+        https://github.com/stanfordnlp/GloVe/tree/master"
       topics:
+        - "NLP"
+        - "Machine learning"
+        - "word embeddings"
+
+    inputs:
+      volume: /veld/input/
+      file_formats: "txt"
+      description: "In the txt file, each line must be one sentence"
+      contents: "natural text"
+
+    outputs:
+      volume: /veld/output/
+      file_formats:
+        - "txt"
+        - "bin"
+      contents: 
+        - "GloVe global word cooccurrence matrix"
+        - "GloVe vectors"
+
+    environment:
+
+      # input and output files
+      in_corpus:
+        type: file
+        volume: /veld/input/
+      out_vocab_file:
+        type: file
+        volume: /veld/output/
+      out_cooccurrence_file:
+        type: file
+        volume: /veld/output/
+      out_cooccurrence_shuf_file:
+        type: file
+        volume: /veld/output/
+      out_vector_file:
+        type: file
+        volume: /veld/output/
+
+      # hyperparameters
+      verbose:
+        type: int
+        default: 2
+      memory: 
+        type: float
+        default: 4.0
+      vocab_min_count:
+        type: int
+        default: 5
+      vector_size:
+        type: int
+        default: 50
+      max_iter:
+        type: int
+        default: 15
+      window_size:
+        type: int
+        default: 15
+      binary:
+        type: int
+        default: 2
+      num_threads:
+        type: int
+        default: 8
+      x_max:
+        type: int
+        default: 10
 
 services:
   veld_train:
@@ -12,18 +78,18 @@ services:
       - ./src/main/train/:/veld/code/
     command: /veld/code/train.sh
     environment:
-      CORPUS: null
-      VOCAB_FILE: null
-      COOCCURRENCE_FILE: null
-      COOCCURRENCE_SHUF_FILE: null
-      SAVE_FILE: null
-      VERBOSE: 2
-      MEMORY: 4.0
-      VOCAB_MIN_COUNT: 5
-      VECTOR_SIZE: 50
-      MAX_ITER: 15
-      WINDOW_SIZE: 15
-      BINARY: 2
-      NUM_THREADS: 8
-      X_MAX: 10
+      in_corpus: null
+      out_vocab_file: null
+      out_cooccurrence_file: null
+      out_cooccurrence_shuf_file: null
+      out_vector_file: null
+      verbose: 2
+      memory: 4.0
+      vocab_min_count: 5
+      vector_size: 50
+      max_iter: 15
+      window_size: 15
+      binary: 2
+      num_threads: 8
+      x_max: 10
 

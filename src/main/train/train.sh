@@ -1,19 +1,25 @@
 #!/bin/bash
 
-# this script is slimmed down and adapted version of the original demo.sh script in the GloVe repo
+# this script is a slimmed down and adapted version of the original demo.sh script in the GloVe repo
+
+in_corpus="/veld/input/${in_corpus}"
+out_vocab_file="/veld/output/${out_vocab_file}"
+out_cooccurrence_file="/veld/output/${out_cooccurrence_file}"
+out_cooccurrence_shuf_file="${out_cooccurrence_shuf_file}"
+out_vector_file="${out_vector_file}"
 
 set -e
 
 echo
-echo "$ /opt/glove/build/vocab_count -min-count $VOCAB_MIN_COUNT -verbose $VERBOSE < $CORPUS > $VOCAB_FILE"
-/opt/glove/build/vocab_count -min-count $VOCAB_MIN_COUNT -verbose $VERBOSE < $CORPUS > $VOCAB_FILE
+echo "$ /opt/glove/build/vocab_count -min-count $vocab_min_count -verbose $verbose < $in_corpus > $out_vocab_file"
+/opt/glove/build/vocab_count -min-count $vocab_min_count -verbose $verbose < $in_corpus > $out_vocab_file
 
-echo "$ /opt/glove/build/cooccur -memory $MEMORY -vocab-file $VOCAB_FILE -verbose $VERBOSE -window-size $WINDOW_SIZE < $CORPUS > $COOCCURRENCE_FILE"
-/opt/glove/build/cooccur -memory $MEMORY -vocab-file $VOCAB_FILE -verbose $VERBOSE -window-size $WINDOW_SIZE < $CORPUS > $COOCCURRENCE_FILE
+echo "$ /opt/glove/build/cooccur -memory $memory -vocab-file $out_vocab_file -verbose $verbose -window-size $window_size < $in_corpus > $out_cooccurrence_file"
+/opt/glove/build/cooccur -memory $memory -vocab-file $out_vocab_file -verbose $verbose -window-size $window_size < $in_corpus > $out_cooccurrence_file
 
-echo "$ /opt/glove/build/shuffle -memory $MEMORY -verbose $VERBOSE < $COOCCURRENCE_FILE > $COOCCURRENCE_SHUF_FILE"
-/opt/glove/build/shuffle -memory $MEMORY -verbose $VERBOSE < $COOCCURRENCE_FILE > $COOCCURRENCE_SHUF_FILE
+echo "$ /opt/glove/build/shuffle -memory $memory -verbose $verbose < $out_cooccurrence_file > $out_cooccurrence_shuf_file"
+/opt/glove/build/shuffle -memory $memory -verbose $verbose < $out_cooccurrence_file > $out_cooccurrence_shuf_file
 
-echo "$ /opt/glove/build/glove -save-file $VECTOR_FILE -threads $NUM_THREADS -input-file $COOCCURRENCE_SHUF_FILE -x-max $X_MAX -iter $MAX_ITER -vector-size $VECTOR_SIZE -binary $BINARY -vocab-file $VOCAB_FILE -verbose $VERBOSE"
-/opt/glove/build/glove -save-file $VECTOR_FILE -threads $NUM_THREADS -input-file $COOCCURRENCE_SHUF_FILE -x-max $X_MAX -iter $MAX_ITER -vector-size $VECTOR_SIZE -binary $BINARY -vocab-file $VOCAB_FILE -verbose $VERBOSE
+echo "$ /opt/glove/build/glove -save-file $out_vector_file -threads $num_threads -input-file $out_cooccurrence_shuf_file -x-max $x_max -iter $max_iter -vector-size $vector_size -binary $binary -vocab-file $out_vocab_file -verbose $verbose"
+/opt/glove/build/glove -save-file $out_vector_file -threads $num_threads -input-file $out_cooccurrence_shuf_file -x-max $x_max -iter $max_iter -vector-size $vector_size -binary $binary -vocab-file $out_vocab_file -verbose $verbose
 
