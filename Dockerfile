@@ -9,9 +9,10 @@ RUN apt install -y \
   libcurl4=7.74.0-1.3+deb11u11 \
   curl=7.74.0-1.3+deb11u11
 RUN pip3 install numpy==1.26.4
-COPY ./src/glove/ /opt/glove/
+COPY ./src/glove_src/ /opt/glove/
 WORKDIR /opt/glove/
 RUN make
 RUN mkdir -p /veld/code/
 WORKDIR /veld/code/
 RUN pip3 install notebook==7.2.1
+
