@@ -8,6 +8,21 @@ out_cooccurrence_file="/veld/output/${out_cooccurrence_file}"
 out_cooccurrence_shuf_file="${out_cooccurrence_shuf_file}"
 out_vector_file="${out_vector_file}"
 
+echo "in_corpus: ${in_corpus}"
+echo "out_vocab_file: ${out_vocab_file}"
+echo "out_cooccurrence_file: ${out_cooccurrence_file}"
+echo "out_cooccurrence_shuf_file: ${out_cooccurrence_shuf_file}"
+echo "out_vector_file: ${out_vector_file}"
+echo "verbose: ${verbose}"
+echo "memory: ${memory}"
+echo "vocab_min_count: ${vocab_min_count}"
+echo "vector_size: ${vector_size}"
+echo "max_iter: ${max_iter}"
+echo "window_size: ${window_size}"
+echo "binary: ${binary}"
+echo "num_threads: ${num_threads}"
+echo "x_max: ${x_max}"
+
 set -e
 
 echo
