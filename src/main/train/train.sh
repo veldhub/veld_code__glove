@@ -5,10 +5,10 @@
 in_corpus_file="/veld/input/${in_corpus_file}"
 out_vocab_file="/veld/output/${out_vocab_file}"
 out_cooccurrence_file="/veld/output/${out_cooccurrence_file}"
-out_cooccurrence_shuf_file="${out_cooccurrence_shuf_file}"
-out_vector_file="${out_vector_file}"
+out_cooccurrence_shuf_file="/veld/output/${out_cooccurrence_shuf_file}"
+out_vector_file="/veld/output/${out_vector_file}"
 
-echo "in_corpus: ${in_corpus}"
+echo "in_corpus_file: ${in_corpus_file}"
 echo "out_vocab_file: ${out_vocab_file}"
 echo "out_cooccurrence_file: ${out_cooccurrence_file}"
 echo "out_cooccurrence_shuf_file: ${out_cooccurrence_shuf_file}"

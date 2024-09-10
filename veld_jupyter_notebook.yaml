@@ -8,28 +8,14 @@ x-veld:
         - "Machine learning"
         - "word embeddings"
 
-    inputs:
-      volume: /veld/input/
-      file_formats: "txt"
-      description: "GloVe vectors expressed in a txt, where each line starts with the word, and its
-        vector values are whitespace separated."
-      contents: 
-        - "word embeddings"
-        - "glove vectors"
-
-    environment:
-      in_vector_file:
-        type: file
-        volume: /veld/input/
-
 services:
-  veld_infer:
+  veld_jupyter_notebook:
     build: .
     command: jupyter notebook --allow-root --ip='*' --NotebookApp.token='' --NotebookApp.password=''
     ports:
       - 8888:8888
     volumes:
-      - ./src/main/infer/:/veld/code/
+      - ./src/main/jupyter_notebook/:/veld/code/
     environment:
       in_vector_file: null
 
