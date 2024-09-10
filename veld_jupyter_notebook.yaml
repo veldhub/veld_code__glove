@@ -16,6 +16,4 @@ services:
       - 8888:8888
     volumes:
       - ./src/main/jupyter_notebook/:/veld/code/
-    environment:
-      in_vector_file: null
 
