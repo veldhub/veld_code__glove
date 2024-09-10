@@ -78,7 +78,7 @@ services:
       - ./src/main/train/:/veld/code/
     command: /veld/code/train.sh
     environment:
-      in_corpus: null
+      in_corpus_file: null
       out_vocab_file: null
       out_cooccurrence_file: null
       out_cooccurrence_shuf_file: null
