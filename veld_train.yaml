@@ -83,6 +83,8 @@ services:
       out_cooccurrence_file: null
       out_cooccurrence_shuf_file: null
       out_vector_file: null
+      model_id: null
+      model_description: null
       verbose: 2
       memory: 4.0
       vocab_min_count: 5

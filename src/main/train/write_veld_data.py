@@ -6,6 +6,8 @@ import yaml
 
 TRAIN_DATA_PATH = "/veld/input/" + os.getenv("in_corpus_file")
 OUT_MODEL_PATH = "/veld/output/"
+MODEL_ID = os.getenv("model_id")
+MODEL_DESCRIPTION = os.getenv("model_description")
 DURATION = float(os.getenv("DURATION"))
 TRAINING_ARCHITECTURE = "glove"
 TRAIN_DATA_DESCRIPTION = None
@@ -58,7 +60,7 @@ def write_metadata():
     out_veld_metadata = {
         "x-veld": {
             "data": {
-                "description": "glove test model",
+                "description": MODEL_DESCRIPTION,
                 "file_types": [
                     "bin",
                     "txt"
@@ -68,6 +70,7 @@ def write_metadata():
                     "glove model",
                 ],
                 "additional": {
+                    "model_id": MODEL_ID,
                     "train_data_description": TRAIN_DATA_DESCRIPTION,
                     "training_architecture": TRAINING_ARCHITECTURE,
                     "train_data_size": train_data_size,
