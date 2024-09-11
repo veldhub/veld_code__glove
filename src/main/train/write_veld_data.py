@@ -29,14 +29,15 @@ def get_description():
             else:
                 veld_file = file
     if veld_file is None:
-        raise Exception("No veld yaml file found.")
-    with open("/veld/input/" + veld_file, "r") as f:
-        input_veld_metadata = yaml.safe_load(f)
-        global TRAIN_DATA_DESCRIPTION
-        try:
-            TRAIN_DATA_DESCRIPTION = input_veld_metadata["x-veld"]["data"]["description"]
-        except:
-            pass
+        print("no training data veld yaml file found. Won't be able to persist that as metadata.")
+    else:
+        with open("/veld/input/" + veld_file, "r") as f:
+            input_veld_metadata = yaml.safe_load(f)
+            global TRAIN_DATA_DESCRIPTION
+            try:
+                TRAIN_DATA_DESCRIPTION = input_veld_metadata["x-veld"]["data"]["description"]
+            except:
+                pass
 
 
 def write_metadata():
