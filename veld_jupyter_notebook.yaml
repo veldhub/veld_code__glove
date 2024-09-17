@@ -15,5 +15,6 @@ services:
     ports:
       - 8888:8888
     volumes:
-      - ./src/main/jupyter_notebook/:/veld/code/
+      - ./src/main/jupyter_notebook/:/veld/code/:z
+      - ./data/:/veld/storage/:z
 

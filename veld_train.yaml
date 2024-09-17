@@ -75,7 +75,9 @@ services:
   veld_train:
     build: .
     volumes:
-      - ./src/main/train/:/veld/code/
+      - ./src/main/train/:/veld/code/:z
+      - ./data/training_data/:/veld/input/:z                                                        
+      - ./data/models/:/veld/output/:z       
     command: /veld/code/train.sh
     environment:
       in_corpus_file: null
