@@ -1,74 +1,72 @@
 x-veld:
   code:
-    about:
-      description: "This code repo encapsulates the original code from
-        https://github.com/stanfordnlp/GloVe/tree/master"
-      topics:
-        - "NLP"
-        - "Machine learning"
-        - "word embeddings"
+    description: "This code repo encapsulates the original code from
+      https://github.com/stanfordnlp/GloVe/tree/master"
+    topics:
+      - "NLP"
+      - "Machine learning"
+      - "word embeddings"
 
     inputs:
-      volume: /veld/input/
-      file_formats: "txt"
-      description: "In the txt file, each line must be one sentence"
-      contents: "natural text"
+      - volume: /veld/input/
+        environment: in_corpus_file
+        description: "In the txt file, each line must be one sentence"
+        file_type: "txt"
+        contents: "natural text"
 
     outputs:
-      volume: /veld/output/
-      file_formats:
-        - "txt"
-        - "bin"
-      contents: 
-        - "GloVe global word cooccurrence matrix"
-        - "GloVe vectors"
+      - volume: /veld/output/
+        environment: out_vocab_file
+        file_type: "bin"
+        contents: 
+          - "GloVe global word cooccurrence matrix"
+          - "GloVe vectors"
+      - volume: /veld/output/
+        environment: out_cooccurrence_file
+        file_type: "bin"
+        contents: 
+          - "GloVe global word cooccurrence matrix"
+          - "GloVe vectors"
+      - volume: /veld/output/
+        environment: out_cooccurrence_shuf_file
+        file_type: "bin"
+        contents: 
+          - "GloVe global word cooccurrence matrix"
+          - "GloVe vectors"
+      - volume: /veld/output/
+        environment: out_vector_file
+        file_type: "bin"
+        contents: 
+          - "GloVe global word cooccurrence matrix"
+          - "GloVe vectors"
 
-    environment:
-
-      # input and output files
-      in_corpus_file:
-        type: file
-        volume: /veld/input/
-      out_vocab_file:
-        type: file
-        volume: /veld/output/
-      out_cooccurrence_file:
-        type: file
-        volume: /veld/output/
-      out_cooccurrence_shuf_file:
-        type: file
-        volume: /veld/output/
-      out_vector_file:
-        type: file
-        volume: /veld/output/
-
-      # hyperparameters
-      verbose:
-        type: int
+    settings:
+      - environment: verbose
+        type: "int"
         default: 2
-      memory: 
-        type: float
+      - environment: memory
+        type: "float"
         default: 4.0
-      vocab_min_count:
-        type: int
+      - environment: vocab_min_count
+        type: "int"
         default: 5
-      vector_size:
-        type: int
+      - environment: vector_size
+        type: "int"
         default: 50
-      max_iter:
-        type: int
+      - environment: max_iter
+        type: "int"
         default: 15
-      window_size:
-        type: int
+      - environment: window_size
+        type: "int"
         default: 15
-      binary:
-        type: int
+      - environment: binary
+        type: "int"
         default: 2
-      num_threads:
-        type: int
+      - environment: num_threads
+        type: "int"
         default: 8
-      x_max:
-        type: int
+      - environment: x_max
+        type: "int"
         default: 10
 
 services:
