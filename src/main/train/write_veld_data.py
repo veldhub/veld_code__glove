@@ -61,7 +61,7 @@ def write_metadata():
         "x-veld": {
             "data": {
                 "description": MODEL_DESCRIPTION,
-                "file_types": [
+                "file_type": [
                     "bin",
                     "txt"
                 ],
