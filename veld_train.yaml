@@ -18,27 +18,27 @@ x-veld:
       - volume: /veld/output/
         environment_var: out_vocab_file
         file_type: "GloVe model"
-        content: 
-          - "GloVe global word cooccurrence matrix"
-          - "GloVe vectors"
+        content:
+          - "NLP model"
+          - "word embeddings model"
       - volume: /veld/output/
         environment_var: out_cooccurrence_file
         file_type: "GloVe model"
-        content: 
-          - "GloVe global word cooccurrence matrix"
-          - "GloVe vectors"
+        content:
+          - "NLP model"
+          - "word embeddings model"
       - volume: /veld/output/
         environment_var: out_cooccurrence_shuf_file
         file_type: "GloVe model"
-        content: 
-          - "GloVe global word cooccurrence matrix"
-          - "GloVe vectors"
+        content:
+          - "NLP model"
+          - "word embeddings model"
       - volume: /veld/output/
         environment_var: out_vector_file
         file_type: "GloVe model"
-        content: 
-          - "GloVe global word cooccurrence matrix"
-          - "GloVe vectors"
+        content:
+          - "NLP model"
+          - "word embeddings model"
 
     config:
       - environment_var: verbose
