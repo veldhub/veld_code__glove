@@ -4,8 +4,8 @@ x-veld:
       https://github.com/stanfordnlp/GloVe/tree/master"
     topic:
       - "NLP"
-      - "Machine learning"
-      - "word embeddings"
+      - "Machine Learning"
+      - "Word Embeddings"
 
     input:
       - volume: /veld/input/
