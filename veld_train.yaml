@@ -1,7 +1,6 @@
 x-veld:
   code:
-    description: "This code repo encapsulates the original code from
-      https://github.com/stanfordnlp/GloVe/tree/master"
+    description: "A GloVe training setup."
     topic:
       - "NLP"
       - "Machine Learning"
