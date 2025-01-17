@@ -6,6 +6,8 @@ import numpy as np
 
 IN_VECTOR_FILE = "/veld/input/" + os.getenv("in_vector_file")
 OUT_VECTOR_FILE = "/veld/output/" + os.getenv("out_vector_file")
+print("IN_VECTOR_FILE:", IN_VECTOR_FILE)
+print("OUT_VECTOR_FILE:", OUT_VECTOR_FILE)
 
 
 # loading model
