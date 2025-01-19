@@ -25,8 +25,8 @@ echo "x_max: ${x_max}"
 
 set -e
 
-echo "begin training."
 start_time=$(date +%s)
+echo "training begin: $(date)"
 
 echo "$ /opt/glove/build/vocab_count -min-count $vocab_min_count -verbose $verbose < $in_corpus_path > $out_vocab_path"
 /opt/glove/build/vocab_count -min-count $vocab_min_count -verbose $verbose < $in_corpus_path > $out_vocab_path
@@ -42,8 +42,8 @@ echo "$ /opt/glove/build/glove -save-file $out_vector_path -threads $num_threads
 
 end_time=$(date +%s)
 DURATION=$(echo "scale=2; $(( end_time - start_time )) / 60" | bc)
-
-echo "done with training. Duration in minutes: ${DURATION}" 
+#echo "done with training. Duration in minutes: ${DURATION}" 
+echo "training done: $(date)"
 
 export DURATION
 python3 /veld/code/write_veld_data.py
