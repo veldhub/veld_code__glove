@@ -16,26 +16,34 @@ x-veld:
     output:
       - volume: /veld/output/
         environment_var: out_vocab_file
-        file_type: "GloVe model"
+        file_type: "txt"
         content:
+          - "GloVe model"
           - "NLP model"
           - "Word Embeddings model"
       - volume: /veld/output/
         environment_var: out_cooccurrence_file
-        file_type: "GloVe model"
+        file_type: "bin"
         content:
+          - "GloVe model"
           - "NLP model"
           - "Word Embeddings model"
       - volume: /veld/output/
         environment_var: out_cooccurrence_shuf_file
-        file_type: "GloVe model"
+        file_type: "bin"
         content:
+          - "GloVe model"
           - "NLP model"
           - "Word Embeddings model"
       - volume: /veld/output/
         environment_var: out_vector_file
-        file_type: "GloVe model"
+        description: "NOTE: only give the file name without file extension, as GloVe will both
+          create a txt and bin from that."
+        file_type: 
+          - "bin"
+          - "txt"
         content:
+          - "GloVe model"
           - "NLP model"
           - "Word Embeddings model"
 
@@ -76,7 +84,7 @@ services:
       - ./src/main/train/:/veld/code/:z
       - ./data/training_data/:/veld/input/:z                                                        
       - ./data/models/:/veld/output/:z       
-    command: sh /veld/code/train.sh
+    command: bash /veld/code/train.sh
     environment:
       in_corpus_file: null
       out_vocab_file: null
